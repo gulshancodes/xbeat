@@ -1,0 +1,98 @@
+::-webkit-scrollbar {
+    width: 0.6vw;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--track-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--thumb-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--thumb-hover-color);
+}
+
+::selection {
+    background-color: var(--main-color-2);
+    color: #fff;
+}
+
+::-moz-selection {
+    background-color: var(--main-color-2);
+    color: #fff;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumb-color) var(--track-color);
+
+    @include devices(xs) {
+        font-size: 15px;
+    }
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+input,
+button,
+textarea {
+    border: none;
+    outline: none;
+    line-height: 1;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    background-color: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
+textarea {
+    resize: vertical;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+img,
+svg {
+    vertical-align: middle;
+    user-select: none;
+}
+
+del {
+    color: var(--text-muted);
+}

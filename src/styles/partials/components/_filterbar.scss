@@ -1,0 +1,166 @@
+#filterbar {
+    background: var(--bg-color-2);
+    padding: 1.5rem;
+    max-height: 82vh;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 0.35vw;
+    }
+
+    @include devices(lg) {
+        display: none;
+    }
+}
+
+.filterbar_wrapper {
+    position: relative;
+    display: grid;
+    gap: 2.5rem;
+    font-size: 0.92rem;
+}
+
+.clear_filter_btn {
+    .btn {
+        width: 100%;
+    }
+
+    @include devices(lg) {
+        margin-top: 1.1rem;
+    }
+}
+
+.sort_head,
+.filter_head {
+
+    @include devices(lg) {
+        @include flexbox(space-between, center);
+    }
+
+    .close_btn {
+        display: none;
+        font-size: 2rem;
+        line-height: 0.5;
+        cursor: pointer;
+
+        @include devices(lg) {
+            display: inline-block;
+        }
+    }
+}
+
+.sort_menu,
+.filter_menu {
+    display: grid;
+    gap: 0.5rem;
+    justify-items: flex-start;
+}
+
+.sort_menu {
+    li {
+        cursor: pointer;
+        @include transition(color, 0.2s);
+
+        &.active,
+        &:hover {
+            color: var(--main-color-2);
+        }
+    }
+}
+
+.filter_block {
+    &:not(:last-child) {
+        margin-bottom: 2.5rem;
+    }
+}
+
+.filter_menu {
+    margin-top: 1rem;
+}
+
+.filter_btn {
+    @include flexbox(flex-start, center);
+    gap: 1rem;
+
+    input,
+    label {
+        cursor: pointer;
+    }
+
+    input {
+        accent-color: var(--main-color-2);
+    }
+
+    label {
+        user-select: none;
+    }
+}
+
+
+/* Filterbar-mobile */
+#filterbar_mob {
+    display: none;
+    // by-default hidden on desktop screens
+}
+
+@include devices(lg) {
+
+    #filterbar_mob {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        width: 100%;
+        padding: 1rem 0.75rem;
+        background-color: var(--bg-color-2);
+        box-shadow: 0px -8px 15px rgba($color: #000000, $alpha: 0.5);
+    }
+
+    .filterbar_mob_wrapper {
+        @include flexbox(space-around, center);
+        font-size: 0.92rem;
+
+        .title {
+            cursor: pointer;
+
+            svg {
+                @include dimension(20px, 20px);
+            }
+
+            span {
+                vertical-align: middle;
+                margin-left: 8px;
+            }
+        }
+    }
+
+    .sort_options,
+    .filter_options {
+        display: none;
+        position: fixed;
+        left: 0;
+        width: 100%;
+        padding: 2rem;
+        background-color: var(--bg-color-2);
+
+        &.show {
+            display: block;
+        }
+    }
+
+    .sort_options {
+        bottom: 0;
+
+        .sort_menu {
+            gap: 1rem;
+        }
+    }
+
+    .filter_options {
+        top: 0;
+        height: 100%;
+        overflow-y: auto;
+    }
+
+}

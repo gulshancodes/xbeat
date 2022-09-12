@@ -1,0 +1,7 @@
+#related_products {
+    @extend #featured;
+}
+
+.related_swiper {
+    @extend .featured_swiper;
+}

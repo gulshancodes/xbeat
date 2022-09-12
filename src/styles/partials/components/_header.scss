@@ -1,0 +1,129 @@
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    @include padding-y(0.8rem, 0.8rem);
+    @include transition(background-color, 0.2s, linear);
+
+    &.sticky {
+        background-color: var(--black-color);
+    }
+}
+
+.navbar {
+    @include flexbox(space-between, center);
+}
+
+.nav_logo {
+    @include devices(xs) {
+        font-size: 1.2rem;
+    }
+}
+
+.nav_actions {
+    @include flexbox($alignItems: center);
+    gap: 3rem;
+    font-size: 1.5rem;
+
+    @include devices(xs) {
+        gap: 2.5rem;
+        font-size: 1.2rem;
+    }
+}
+
+.search_action,
+.cart_action,
+.user_action {
+    position: relative;
+}
+
+.search_action,
+.cart_action {
+    &:hover .tooltip {
+        @include toggleVisibility(visible, 1);
+    }
+}
+
+.search_action,
+.user_action {
+    span {
+        cursor: pointer;
+    }
+}
+
+.cart_action {
+
+    .badge {
+        @include centered;
+        @include dimension(20px, 20px);
+        position: absolute;
+        top: 0;
+        right: -20px;
+        background-color: var(--main-color-2);
+        border-radius: 50%;
+    }
+}
+
+.user_action {
+
+    .dropdown_menu {
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 17.5rem;
+        background-color: var(--bg-color-2);
+        padding: 1.4rem;
+        font-size: 0.9rem;
+        border-radius: 3px;
+        @include bordered(1px, var(--text-muted));
+        @include toggleVisibility(hidden, 0);
+        @include transition(all, 0.2s, ease-in-out);
+
+        h4 {
+            font-weight: 600;
+            letter-spacing: 0.5px;
+
+            a {
+                color: var(--main-color);
+                opacity: 0.95;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+
+        p {
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        button {
+            margin-top: 1rem;
+            padding: 0.8rem 1rem;
+            @include bordered(1px, var(--text-muted));
+            @include transition(all, 0.3s, ease);
+
+            &:hover {
+                color: #eee;
+                border-color: #eee;
+            }
+        }
+
+        li {
+            &:not(:last-child) {
+                margin-bottom: 0.5rem;
+            }
+
+            a:hover {
+                color: #eee;
+            }
+        }
+    }
+
+    &:hover .dropdown_menu {
+        @include toggleVisibility(visible, 1);
+    }
+}

@@ -1,0 +1,114 @@
+@mixin dimension($width: auto, $height: auto) {
+    width: $width;
+    height: $height;
+}
+
+@mixin centered {
+    display: grid;
+    place-items: center;
+}
+
+@mixin mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin margin-x($marginLeft, $marginRight) {
+    margin-left: $marginLeft;
+    margin-right: $marginRight;
+}
+
+@mixin margin-y($marginTop, $marginBottom) {
+    margin-top: $marginTop;
+    margin-bottom: $marginBottom;
+}
+
+@mixin padding-x($paddingLeft, $paddingRight) {
+    padding-left: $paddingLeft;
+    padding-right: $paddingRight;
+}
+
+@mixin padding-y($paddingTop, $paddingBottom) {
+    padding-top: $paddingTop;
+    padding-bottom: $paddingBottom;
+}
+
+@mixin img-fit {
+    @include dimension(100%, 100%);
+    object-fit: cover;
+}
+
+@mixin bg-cover {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@mixin pseudo($content: "", $top: 0, $left: 0, $width: auto, $height: auto) {
+    content: $content;
+    position: absolute;
+    top: $top;
+    left: $left;
+    @include dimension($width, $height);
+    pointer-events: none;
+}
+
+@mixin bordered($borderWidth, $borderColor) {
+    border: $borderWidth solid $borderColor;
+}
+
+@mixin flexbox($justifyContent: flex-start, $alignItems: flex-start) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+@mixin grid-cols($colsCount, $colsWidth, $gap) {
+    grid-template-columns: repeat($colsCount, $colsWidth);
+    gap: $gap;
+}
+
+@mixin transition($prop: all, $duration, $timingFn: ease) {
+    transition: $prop $duration $timingFn;
+}
+
+@mixin toggleVisibility($visibility, $opacity) {
+    visibility: $visibility;
+    opacity: $opacity;
+}
+
+
+// mixin for media-queries
+
+@mixin devices($breakpoint) {
+
+    @if $breakpoint==xl {
+        @media (max-width: 1399.98px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint==lg {
+        @media (max-width: 1023.98px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint==md {
+        @media (max-width: 767.98px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint==sm {
+        @media (max-width: 639.98px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint==xs {
+        @media (max-width: 479.98px) {
+            @content;
+        }
+    }
+}

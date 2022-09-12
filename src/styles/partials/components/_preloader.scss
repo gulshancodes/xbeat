@@ -1,0 +1,45 @@
+#preloader {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    @include centered;
+}
+
+.loader {
+    @include dimension(12.5rem, 12.5rem);
+    border-radius: 50%;
+    box-shadow: 1px 8px 8px var(--main-color);
+    animation: spin 1.4s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: text 1s linear infinite alternate;
+}
+
+@keyframes text {
+    0% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

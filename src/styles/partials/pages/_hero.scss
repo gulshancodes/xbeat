@@ -1,0 +1,121 @@
+#hero {
+    min-height: 100vh;
+    @include centered;
+
+    .swiper {
+        @include dimension(100%, 100%);
+        @include padding-x(0.75rem, 0.75rem);
+        @include padding-y(5rem, 5rem);
+    }
+
+    .swiper-pagination {
+        bottom: 30px;
+    }
+}
+
+.hero_wrapper {
+    position: relative;
+    @include grid-cols(2, 0.4fr, 2rem);
+    place-content: center;
+    place-items: center;
+
+    &::before {
+        @include pseudo($top: 10%);
+        font-size: 15rem;
+        font-weight: 700;
+        opacity: 0.05;
+
+        @include devices(xl) {
+            font-size: 12rem;
+        }
+
+        @include devices(sm) {
+            font-size: 8rem;
+        }
+    }
+
+    &.hero_slide-0::before {
+        content: "Over Ear";
+    }
+
+    &.hero_slide-1::before {
+        content: "In Ear";
+    }
+
+    &.hero_slide-2::before {
+        content: "Over Ear";
+    }
+
+    @include devices(lg) {
+        grid-template-columns: 0.7fr;
+        gap: 4rem;
+    }
+
+    @include devices(sm) {
+        grid-template-columns: 0.9fr;
+        gap: 2rem;
+    }
+}
+
+.hero_item_txt,
+.hero_item_img {
+    position: relative;
+}
+
+.hero_item_txt {
+    text-shadow: var(--text-shadow);
+
+    h1 {
+        font-size: 3rem;
+        text-transform: capitalize;
+        word-spacing: 3px;
+        @include margin-y(0.8rem, 1rem);
+
+        @include devices(xl) {
+            font-size: 2.4rem;
+        }
+
+        @include devices(sm) {
+            font-size: 1.8rem;
+        }
+
+        @include devices(xs) {
+            font-size: 1.5rem;
+        }
+    }
+
+    h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+
+        @include devices(sm) {
+            font-size: 1rem;
+        }
+    }
+
+    .hero_price {
+        @include margin-y(2rem, 3rem);
+
+        @include devices(sm) {
+            @include margin-y(1.5rem, 2rem);
+        }
+    }
+
+}
+
+.hero_item_img {
+    overflow: hidden;
+
+    img {
+        @include img-fit;
+    }
+
+    @include devices(lg) {
+        grid-row: 1;
+    }
+
+    @include devices(sm) {
+        max-width: 18rem;
+        width: 75%;
+    }
+}

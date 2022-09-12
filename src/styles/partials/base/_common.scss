@@ -1,0 +1,197 @@
+.container {
+    max-width: 1440px;
+    @include mx-auto;
+    @include padding-x(0.75rem, 0.75rem);
+
+    @include devices(xl) {
+        max-width: 1280px;
+    }
+
+    @include devices(lg) {
+        max-width: 1024px;
+    }
+
+    @include devices(md) {
+        max-width: 768px;
+    }
+
+    @include devices(sm) {
+        max-width: 640px;
+    }
+
+    @include devices(xs) {
+        width: 100%;
+    }
+}
+
+.wrapper {
+    display: grid;
+}
+
+.section {
+    @include padding-y(5rem, 5rem);
+}
+
+.section_head {
+    margin-bottom: 4rem;
+    text-align: center;
+
+    @include devices(xs) {
+        margin-bottom: 2rem;
+    }
+}
+
+.overflow_hide {
+    overflow: hidden;
+}
+
+.btn {
+    display: inline-block;
+    background-color: rgba($color: #FF0000, $alpha: 0.8);
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 3px;
+    @include transition(background-color, 0.2s, ease-out);
+
+    &:hover {
+        background-color: var(--main-color);
+    }
+}
+
+.input_box {
+    position: relative;
+}
+
+.input_field {
+    display: block;
+    background: transparent;
+    color: #fff;
+    width: 100%;
+    padding: 0.65rem 0.55rem;
+    font-size: 1rem;
+    border-radius: 3px;
+    border: 2px solid rgba($color: #ffffff, $alpha: 0.3);
+    @include transition(border-color, 0.2s, ease-in-out);
+
+    &:focus {
+        border-color: rgba($color: #ffffff, $alpha: 0.6);
+    }
+}
+
+.input_label {
+    line-height: 1;
+    pointer-events: none;
+}
+
+.badge {
+    display: inline-block;
+    color: #fff;
+    line-height: 1;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    text-shadow: var(--text-shadow);
+    overflow: hidden;
+
+    @include devices(xs) {
+        transform: scale(0.8);
+        transform-origin: 0 0;
+    }
+}
+
+.separator {
+    @include margin-y(1rem, 1rem);
+    border-top: 1px solid rgba($color: #666666, $alpha: 0.6);
+}
+
+.rating_star {
+    color: var(--main-color-2);
+    font-size: 0.9rem;
+}
+
+.tabs {
+    @include flexbox(center, center);
+    flex-wrap: wrap;
+    gap: 4rem;
+
+    .tabs_item {
+        padding: 0.5rem 1rem;
+        border-radius: 3px;
+        cursor: pointer;
+        @include transition(all, 0.2s, ease-out);
+
+        &.active,
+        &:hover {
+            background-color: var(--main-color);
+            color: #fff;
+        }
+
+        @include devices(sm) {
+            font-size: 0.8rem;
+            padding: 0.2rem 0.5rem;
+        }
+    }
+
+    @include devices(lg) {
+        gap: unset;
+        justify-content: space-evenly;
+    }
+
+    @include devices(xs) {
+        gap: 1rem;
+    }
+}
+
+.tooltip {
+    position: absolute;
+    bottom: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--bg-color-3);
+    color: #eee;
+    border-radius: 3px;
+    user-select: none;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+    @include bordered(1px, var(--text-muted));
+    @include toggleVisibility(hidden, 0);
+    @include transition(all, 0.2s, ease-in-out);
+
+    @include devices(lg) {
+        display: none;
+    }
+}
+
+.backdrop {
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    @include dimension(100%, 100%);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.modal_centered {
+    @include centered;
+    min-height: calc(100% - 3rem);
+    margin: 1.5rem;
+
+    @include devices(xs) {
+        min-height: calc(100% - 1rem);
+        margin: 0.5rem;
+    }
+}
+
+.swiper {
+    user-select: none;
+}
+
+.swiper-pagination-bullet {
+    background: var(--text-color) !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--main-color) !important;
+}

@@ -1,0 +1,130 @@
+#account_form {
+    position: relative;
+    background-color: var(--bg-color);
+    max-width: 480px;
+    width: 100%;
+    padding: 3rem;
+    border-radius: 3px;
+
+    @include devices(xs) {
+        @include padding-x(1rem, 1rem);
+        @include padding-y(2rem, 2rem);
+    }
+
+    .close_btn {
+        background-color: rgba($color: #000000, $alpha: 0.5);
+        color: #eee;
+        position: absolute;
+        top: 0;
+        right: 0;
+        @include dimension(30px, 30px);
+        font-size: 1.8rem;
+        line-height: 30px;
+        text-align: center;
+        cursor: pointer;
+        overflow: hidden;
+        opacity: 0.8;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.form_head {
+
+    h2 {
+        margin-bottom: 0.6rem;
+    }
+
+    button {
+        color: #eee;
+        opacity: 0.8;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.form_body {
+    display: grid;
+    gap: 1.5rem;
+    @include margin-y(2rem, 2rem);
+
+    .input_label {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform-origin: 0 0;
+        background-color: var(--bg-color);
+        @include margin-y(-8px, -8px);
+        @include padding-x(5px, 5px);
+        @include transition(transform, 0.2s, ease-in-out);
+    }
+
+    .input_field {
+        padding: 0.95rem 0.85rem;
+
+        &:focus-within ~ .input_label,
+        &:valid ~ .input_label {
+            transform: scale(0.85) translateY(-185%);
+        }
+    }
+
+    .login_btn {
+        @include margin-y(0.8rem, 0.4rem);
+    }
+
+}
+
+.form_foot {
+    text-align: center;
+
+    p {
+        position: relative;
+        @include margin-y(2rem, 2rem);
+
+        &::before,
+        &::after {
+            @include pseudo($top: 50%, $left: 0, $width: 28%, $height: 1px);
+            @include margin-y(0.5px, 0.5px);
+            background-color: rgba($color: #ffffff, $alpha: 0.4);
+        }
+
+        &::after {
+            left: auto;
+            right: 0;
+        }
+    }
+}
+
+.login_options {
+    display: grid;
+    @include grid-cols(3, 1fr, 1rem);
+
+    a {
+        color: #fff;
+        text-shadow: var(--text-shadow);
+        @include padding-x(0.4rem, 0.4rem);
+        @include padding-y(0.8rem, 0.8rem);
+
+        &:nth-child(1) {
+            background-color: var(--fb-color);
+        }
+
+        &:nth-child(2) {
+            background-color: var(--google-color);
+        }
+
+        &:nth-child(3) {
+            background-color: var(--twitter-color);
+        }
+
+        @include devices(xs) {
+            font-size: 0.8rem;
+            @include padding-y(0.5rem, 0.5rem);
+        }
+    }
+}

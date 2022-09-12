@@ -1,0 +1,21 @@
+.back_top {
+    position: fixed;
+    bottom: 2vh;
+    right: 1.3vw;
+    z-index: 99;
+    background-color: var(--main-color);
+    color: #fff;
+    font-size: 1.4rem;
+    padding: 0.6rem;
+    cursor: pointer;
+    border-radius: 3px;
+    transform: scale(0);
+    @include centered;
+    @include toggleVisibility(hidden, 0);
+    @include transition($duration: 0.3s);
+
+    &.popped {
+        transform: scale(1);
+        @include toggleVisibility(visible, 1);
+    }
+}

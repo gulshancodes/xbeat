@@ -1,0 +1,27 @@
+#error_page {
+    @include centered;
+    @include padding-y(8rem, 8rem);
+    text-align: center;
+}
+
+.error_page_content {
+
+    h1 {
+        font-size: 8rem;
+        color: var(--main-color-2);
+    }
+
+    h2 {
+        font-size: 3rem;
+        @include margin-y(0.8rem, 2rem);
+    }
+
+    h3 {
+        font-weight: 500;
+    }
+
+    .btn {
+        margin-top: 2rem;
+    }
+
+}

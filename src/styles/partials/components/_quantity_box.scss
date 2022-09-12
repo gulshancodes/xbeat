@@ -1,0 +1,32 @@
+.quantity_box {
+    display: inline-flex;
+    align-items: center;
+    @include bordered(1px, #444);
+    border-radius: 3px;
+    user-select: none;
+    overflow: hidden;
+
+    button {
+        @include dimension(3.125rem, 2.25rem);
+        background-color: var(--bg-color-3);
+        @include transition(color, 0.2s);
+
+        &:hover {
+            color: #eee;
+        }
+
+        &[disabled] {
+            cursor: not-allowed;
+            color: var(--text-muted);
+        }
+    }
+}
+
+.quantity_count {
+    @include dimension(3.75rem, 2.25rem);
+    color: red;
+    font-size: 1.4rem;
+    line-height: 2.25rem;
+    font-weight: bold;
+    text-align: center;
+}

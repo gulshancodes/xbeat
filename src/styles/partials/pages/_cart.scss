@@ -1,0 +1,156 @@
+#cart {
+    @include padding-y(8rem, 8rem);
+}
+
+.empty_cart_wrapper {
+    @include centered;
+    gap: 2rem;
+}
+
+.empty_cart_img {
+    font-size: 10rem;
+    color: var(--main-color-2);
+}
+
+.cart_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    align-items: start;
+    gap: 4rem;
+
+    .quantity_box {
+        transform: scale(0.9);
+        transform-origin: 0 0;
+
+        @include devices(sm) {
+            transform: scale(0.6);
+        }
+    }
+
+    @include devices(lg) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.cart_left_col {
+    background: var(--bg-color-2);
+    max-height: 600px;
+    padding: 1rem 3rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 0.35vw;
+    }
+
+    @include devices(lg) {
+        @include padding-x(1.5rem, 1.5rem);
+    }
+
+    @include devices(sm) {
+        padding: 1rem;
+    }
+}
+
+.cart_item {
+    display: grid;
+    grid-template-columns: 0.25fr 0.8fr;
+    gap: 3rem;
+    @include padding-y(3rem, 3rem);
+
+    &:not(:last-child) {
+        border-bottom: 1px solid rgba($color: #666666, $alpha: 0.6);
+    }
+
+    @include devices(sm) {
+        grid-template-columns: 0.3fr 0.7fr;
+        gap: 2rem;
+        @include padding-y(2rem, 2rem);
+    }
+}
+
+.cart_item_head {
+    @include flexbox(space-between);
+    gap: 1.4rem;
+}
+
+.cart_item_title {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.3;
+
+    @include devices(sm) {
+        font-size: 0.8rem;
+    }
+}
+
+.cart_item_price {
+    font-size: 1.3rem;
+    @include margin-y(1.5rem, 2rem);
+
+    @include devices(sm) {
+        font-size: 0.95rem;
+        @include margin-y(1rem, 1rem);
+    }
+}
+
+.cart_item_del {
+    position: relative;
+    line-height: 1;
+    font-size: 1.2rem;
+
+    span {
+        cursor: pointer;
+        @include transition(color, 0.4s);
+
+        &:hover {
+            color: var(--main-color-2);
+        }
+    }
+
+    .tooltip {
+        width: max-content;
+    }
+
+    &:hover .tooltip {
+        @include toggleVisibility(visible, 1);
+    }
+
+    @include devices(sm) {
+        font-size: 0.9rem;
+    }
+}
+
+.order_summary_details {
+    display: grid;
+    gap: 1.5rem;
+    @include margin-y(3rem, 3rem);
+
+    div {
+        @include flexbox(space-between, center);
+    }
+
+    .price,
+    .discount,
+    .delivery {
+        b {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+    }
+
+    .discount,
+    .delivery {
+        b {
+            color: green;
+        }
+    }
+
+    .total_price {
+        font-size: 1.6rem;
+    }
+}
+
+.checkout_btn {
+    width: 100%;
+}

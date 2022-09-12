@@ -1,0 +1,25 @@
+#featured {
+    margin-top: 3rem;
+}
+
+.featured_slides {
+    text-align: center;
+    overflow: hidden;
+
+    @include devices(md) {
+        width: 16rem;
+    }
+}
+
+.featured_swiper {
+    @include padding-y(3rem !important, 5rem !important);
+}
+
+.featured_img {
+    @include margin-y(2rem, 2rem);
+    overflow: hidden;
+
+    img {
+        @include img-fit;
+    }
+}
