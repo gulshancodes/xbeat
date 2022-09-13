@@ -12,7 +12,7 @@ const App = () => {
     <>
       <CommonProvider>
         <CartProvider>
-          
+          <Preloader />
           <Header />
           <RouterRoutes />
           <Footer />
