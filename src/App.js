@@ -1,6 +1,5 @@
 import { CommonProvider } from './contexts/common/commonContext';
 import { CartProvider } from './contexts/cart/cartContext';
-import Preloader from './components/common/Preloader';
 import Header from './components/common/Header';
 import RouterRoutes from './routes/RouterRoutes';
 import Footer from './components/common/Footer';
@@ -12,7 +11,6 @@ const App = () => {
     <>
       <CommonProvider>
         <CartProvider>
-          <Preloader />
           <Header />
           <RouterRoutes />
           <Footer />
