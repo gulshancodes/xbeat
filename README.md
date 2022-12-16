@@ -35,7 +35,7 @@ State management using Context API.
 
 <br/>
 
-## Available Scripts
+## Available Scripts:
 
 #### `npm start`
 
