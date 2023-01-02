@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BiSort, BiFilterAlt } from 'react-icons/bi';
-import { filterMenu, sortMenu } from '../../data/filterBarData';
+import { sortMenu } from '../../data/filterBarData';
 
 
 const FilterBar = (props) => {
@@ -75,7 +75,7 @@ export default FilterBar;
 /*------- "FilterBarOptions Component" -------*/
 const FilterBarOptions = (props) => {
 
-    const { isSortVisible, isFilterVisible, handleSortVisibility, handleFilterVisibility, handleSorting, handleFiltering, handleClearFilters, active, activeClass } = props;
+    const { isSortVisible, isFilterVisible, handleSortVisibility, handleFilterVisibility, handleSorting, handleFiltering, handleClearFilters, active, activeClass, updatedFilterMenu } = props;
 
 
     return (
@@ -95,7 +95,7 @@ const FilterBarOptions = (props) => {
                 )
             }
 
-            {/*===== Sorting =====*/}
+            {/*===== Sort-menu =====*/}
             <div className={`sort_options ${isSortVisible ? 'show' : ''}`}>
                 <div className="sort_head">
                     <h3 className="title">Sort By</h3>
@@ -110,20 +110,23 @@ const FilterBarOptions = (props) => {
                 <div className="separator"></div>
                 <ul className="sort_menu">
                     {
-                        sortMenu.map((item, i) => (
-                            <li
-                                key={i}
-                                className={activeClass(item)}
-                                onClick={() => handleSorting(item)}
-                            >
-                                {item}
-                            </li>
-                        ))
+                        sortMenu.map(item => {
+                            const { id, title } = item;
+                            return (
+                                <li
+                                    key={id}
+                                    className={activeClass(title)}
+                                    onClick={() => handleSorting(title)}
+                                >
+                                    {title}
+                                </li>
+                            );
+                        })
                     }
                 </ul>
             </div>
 
-            {/*===== Filtering =====*/}
+            {/*===== Filter-menu =====*/}
             <div className={`filter_options ${isFilterVisible ? 'show' : ''}`}>
                 <div className="filter_head">
                     <h3 className="title">Filter By</h3>
@@ -137,24 +140,28 @@ const FilterBarOptions = (props) => {
                 </div>
                 <div className="separator"></div>
                 {
-                    filterMenu.map(item => {
+                    updatedFilterMenu.map(item => {
                         const { id, title, menu } = item;
                         return (
                             <div className="filter_block" key={id}>
                                 <h4>{title}</h4>
                                 <ul className="filter_menu">
                                     {
-                                        menu.map((item, i) => (
-                                            <li key={i} className="filter_btn">
-                                                <input
-                                                    type="checkbox"
-                                                    id={item}
-                                                    value={item}
-                                                    onChange={handleFiltering}
-                                                />
-                                                <label htmlFor={item}>{item}</label>
-                                            </li>
-                                        ))
+                                        menu.map((item) => {
+                                            const { id, checked, label } = item;
+                                            return (
+                                                <li key={id} className="filter_btn">
+                                                    <input
+                                                        type="checkbox"
+                                                        id={label}
+                                                        value={label}
+                                                        checked={checked}
+                                                        onChange={() => handleFiltering(id)}
+                                                    />
+                                                    <label htmlFor={label}>{label}</label>
+                                                </li>
+                                            );
+                                        })
                                     }
                                 </ul>
                             </div>

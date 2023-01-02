@@ -1,9 +1,24 @@
 export const sortMenu = [
-    "Latest",
-    "Featured",
-    "Top Rated",
-    "Price(Lowest First)",
-    "Price(Highest First)"
+    {
+        id: 1,
+        title: "Latest",
+    },
+    {
+        id: 2,
+        title: "Featured",
+    },
+    {
+        id: 3,
+        title: "Top Rated",
+    },
+    {
+        id: 4,
+        title: "Price(Lowest First)",
+    },
+    {
+        id: 5,
+        title: "Price(Highest First)"
+    },
 ];
 
 export const filterMenu = [
@@ -11,40 +26,47 @@ export const filterMenu = [
         id: 1,
         title: "Brands",
         menu: [
-            "JBL",
-            "BoAt",
-            "Sony"
+            {
+                id: 1,
+                label: "JBL",
+                checked: false,
+            },
+            {
+                id: 2,
+                label: "BoAt",
+                checked: false,
+            },
+            {
+                id: 3,
+                label: "Sony",
+                checked: false,
+            },
         ],
     },
     {
         id: 2,
         title: "Category",
         menu: [
-            "Headphones",
-            "Earbuds",
-            "Earphones",
-            "Neckbands"
-        ],
-    },
-    {
-        id: 3,
-        title: "Type",
-        menu: [
-            "In-Ear",
-            "On-Ear",
-            "Over-Ear",
-        ],
-    },
-    {
-        id: 4,
-        title: "Price",
-        menu: [
-            "500 & Below",
-            "501 - 1,000",
-            "1,001 - 1,500",
-            "1,501 - 3,000",
-            "3,001 - 5,000",
-            "5,001 & Above"
+            {
+                id: 4,
+                label: "Headphones",
+                checked: false,
+            },
+            {
+                id: 5,
+                label: "Earbuds",
+                checked: false,
+            },
+            {
+                id: 6,
+                label: "Earphones",
+                checked: false,
+            },
+            {
+                id: 7,
+                label: "Neckbands",
+                checked: false,
+            },
         ],
     },
 ];
