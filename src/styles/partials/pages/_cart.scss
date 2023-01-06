@@ -2,16 +2,6 @@
     @include padding-y(8rem, 8rem);
 }
 
-.empty_cart_wrapper {
-    @include centered;
-    gap: 2rem;
-}
-
-.empty_cart_img {
-    font-size: 10rem;
-    color: var(--main-color-2);
-}
-
 .cart_wrapper {
     display: grid;
     grid-template-columns: 1fr 0.5fr;

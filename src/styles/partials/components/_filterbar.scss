@@ -72,10 +72,10 @@
     &:not(:last-child) {
         margin-bottom: 2.5rem;
     }
-}
 
-.filter_menu {
-    margin-top: 1rem;
+    h4 {
+        margin-bottom: 1rem;
+    }
 }
 
 .filter_btn {
@@ -87,12 +87,15 @@
         cursor: pointer;
     }
 
-    input {
-        accent-color: var(--main-color-2);
-    }
-
     label {
         user-select: none;
+    }
+}
+
+.price_filter {
+    p {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
     }
 }
 

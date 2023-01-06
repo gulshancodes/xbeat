@@ -21,52 +21,43 @@ export const sortMenu = [
     },
 ];
 
-export const filterMenu = [
+export const brandsMenu = [
     {
         id: 1,
-        title: "Brands",
-        menu: [
-            {
-                id: 1,
-                label: "JBL",
-                checked: false,
-            },
-            {
-                id: 2,
-                label: "BoAt",
-                checked: false,
-            },
-            {
-                id: 3,
-                label: "Sony",
-                checked: false,
-            },
-        ],
+        label: "JBL",
+        checked: false,
     },
     {
         id: 2,
-        title: "Category",
-        menu: [
-            {
-                id: 4,
-                label: "Headphones",
-                checked: false,
-            },
-            {
-                id: 5,
-                label: "Earbuds",
-                checked: false,
-            },
-            {
-                id: 6,
-                label: "Earphones",
-                checked: false,
-            },
-            {
-                id: 7,
-                label: "Neckbands",
-                checked: false,
-            },
-        ],
+        label: "BoAt",
+        checked: false,
+    },
+    {
+        id: 3,
+        label: "Sony",
+        checked: false,
+    },
+];
+
+export const categoryMenu = [
+    {
+        id: 1,
+        label: "Headphones",
+        checked: false,
+    },
+    {
+        id: 2,
+        label: "Earbuds",
+        checked: false,
+    },
+    {
+        id: 3,
+        label: "Earphones",
+        checked: false,
+    },
+    {
+        id: 4,
+        label: "Neckbands",
+        checked: false,
     },
 ];

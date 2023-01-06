@@ -65,6 +65,11 @@ textarea {
     background-color: transparent;
 }
 
+input[type="checkbox"],
+input[type="range"] {
+    accent-color: var(--main-color-2);
+}
+
 button {
     cursor: pointer;
 }

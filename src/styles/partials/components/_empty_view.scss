@@ -1,0 +1,9 @@
+.empty_view_wrapper {
+    @include centered;
+    gap: 2rem;
+}
+
+.empty_view_icon {
+    font-size: 10rem;
+    color: var(--main-color-2);
+}

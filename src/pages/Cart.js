@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { BsCartX } from 'react-icons/bs';
 import { calculateTotal, displayMoney } from '../helpers/utils';
 import useDocTitle from '../hooks/useDocTitle';
 import cartContext from '../contexts/cart/cartContext';
 import CartItem from '../components/cart/CartItem';
+import EmptyView from '../components/common/EmptyView';
 
 
 const Cart = () => {
@@ -44,15 +44,23 @@ const Cart = () => {
                 <div className="container">
                     {
                         cartQuantity === 0 ? (
-                            <div className="empty_cart_wrapper">
-                                <div className="empty_cart_img"><BsCartX /></div>
-                                <h2>Your Cart is Empty</h2>
-                                <Link to="/all-products" className="btn">Start Shopping</Link>
-                            </div>
+                            <EmptyView
+                                icon={<BsCartX />}
+                                msg="Your Cart is Empty"
+                                link="/all-products"
+                                btnText="Start Shopping"
+                            />
                         ) : (
                             <div className="wrapper cart_wrapper">
                                 <div className="cart_left_col">
-                                    {cartItems.map(item => <CartItem key={item.id} {...item} />)}
+                                    {
+                                        cartItems.map(item => (
+                                            <CartItem
+                                                key={item.id}
+                                                {...item}
+                                            />
+                                        ))
+                                    }
                                 </div>
 
                                 <div className="cart_right_col">
