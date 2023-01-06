@@ -4,7 +4,6 @@
 
 Audio Store eCommerce Website, built with **React JS**. <br/>
 State management using Context API.
-
 <br/>
 
 ## Features:
@@ -13,10 +12,13 @@ State management using Context API.
 - #### Remove Product from the Cart
 - #### Increment / Decrement the Product's Quantity
 - #### Product's Total Price / Discount Calculations
+- #### Filters - Sort by / Filter by Options
 - #### Custom Hooks
+- #### Local Storage
 - #### Fully Responsive
 - #### Dark Theme
 - #### Multi Pages
+- #### ...and much more
 
 <br/>
 
