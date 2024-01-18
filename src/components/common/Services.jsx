@@ -1,5 +1,5 @@
 import React from 'react';
-import servicesData from '../../data/servicesData';
+import servicesData from '../../data/servicesData.jsx';
 import SectionsHead from './SectionsHead';
 
 

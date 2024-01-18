@@ -2,8 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineSearch, AiOutlineShoppingCart, AiOutlineUser } from 'react-icons/ai';
 import { dropdownMenu } from '../../data/headerData';
-import commonContext from '../../contexts/common/commonContext';
-import cartContext from '../../contexts/cart/cartContext';
+import commonContext from '../../contexts/common/commonContext.jsx';
+import cartContext from '../../contexts/cart/cartContext.jsx';
 import AccountForm from '../form/AccountForm';
 import SearchBar from './SearchBar';
 

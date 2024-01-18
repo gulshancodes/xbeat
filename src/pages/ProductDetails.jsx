@@ -4,7 +4,7 @@ import { IoMdStar, IoMdCheckmark } from 'react-icons/io';
 import { calculateDiscount, displayMoney } from '../helpers/utils';
 import useDocTitle from '../hooks/useDocTitle';
 import useActive from '../hooks/useActive';
-import cartContext from '../contexts/cart/cartContext';
+import cartContext from '../contexts/cart/cartContext.jsx';
 import productsData from '../data/productsData';
 import SectionsHead from '../components/common/SectionsHead';
 import RelatedSlider from '../components/sliders/RelatedSlider';

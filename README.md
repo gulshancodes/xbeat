@@ -39,9 +39,9 @@ State management using Context API.
 
 ## Available Scripts:
 
-#### `npm start`
+#### `npm run dev`
 
-#### `npm test`
+#### `npm run test`
 
 #### `npm run build`
 
