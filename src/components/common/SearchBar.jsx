@@ -1,6 +1,6 @@
 import React, { useContext, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import commonContext from '../../contexts/common/commonContext';
+import commonContext from '../../contexts/common/commonContext.jsx';
 import productsData from '../../data/productsData';
 import useOutsideClose from '../../hooks/useOutsideClose';
 import useScrollDisable from '../../hooks/useScrollDisable';

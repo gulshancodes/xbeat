@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { FaPlus, FaMinus } from 'react-icons/fa';
-import cartContext from '../../contexts/cart/cartContext';
+import cartContext from '../../contexts/cart/cartContext.jsx';
 
 
 const QuantityBox = (props) => {

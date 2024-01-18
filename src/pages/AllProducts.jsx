@@ -4,7 +4,7 @@ import useDocTitle from '../hooks/useDocTitle';
 import FilterBar from '../components/filters/FilterBar';
 import ProductCard from '../components/product/ProductCard';
 import Services from '../components/common/Services';
-import filtersContext from '../contexts/filters/filtersContext';
+import filtersContext from '../contexts/filters/filtersContext.jsx';
 import EmptyView from '../components/common/EmptyView';
 
 

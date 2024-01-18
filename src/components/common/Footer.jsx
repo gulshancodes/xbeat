@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { footMenu, footSocial } from '../../data/footerData';
+import { footMenu, footSocial } from '../../data/footerData.jsx';
 
 
 const Footer = () => {
